@@ -70,6 +70,12 @@ pred.lm = predict(lm_fit,test, type="response") # Predict
 mean(abs(test$trade_in_value - pred.lm )) 
 mean((test$trade_in_value - pred.lm )^2)
 
+# #Count Errors 
+#Under
+sum(ifelse(test$trade_in_value > pred.lm,1,0))
+#Over
+sum(ifelse(test$trade_in_value < pred.lm,1,0))
+
 ## Avg Residual Over/ Under 
 Avg_Over = mean(ifelse(test$trade_in_value - pred.lm > 0,test$trade_in_value - pred.lm,NA),na.rm = TRUE)
 Avg_Under = mean(ifelse(test$trade_in_value - pred.lm < 0,test$trade_in_value - pred.lm,NA),na.rm = TRUE)
@@ -136,6 +142,12 @@ preds.rf <- predict(rf.model,newdata=test)
 ## Error
 mean(abs(test$trade_in_value - preds.rf ))
 mean((test$trade_in_value - preds.rf )^2)
+
+# #Count Errors 
+#Under
+sum(ifelse(test$trade_in_value > preds.rf,1,0))
+#Over
+sum(ifelse(test$trade_in_value < preds.rf,1,0))
 
 ## Avg Residual Over/ Under 
 #sum(ifelse(test$trade_in_value - pred.lm < 0,1,0))
