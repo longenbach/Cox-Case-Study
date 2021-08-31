@@ -1,6 +1,6 @@
 # Cox Automotive Retail Data Science - Case Study
 
-### Sam Longenbach ([Resume / CV)[https://longenbach.github.io/CV_Resume/])
+### Sam Longenbach ([Resume / CV](https://longenbach.github.io/CV_Resume/))
 
 ### Code:
 * input/ - necessary data files
